@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CAIS - Login</title>
+  <link rel="stylesheet" href="../css/login.css">
+</head>
+<body class="login-page">
+
+  <header class="login-header">
+    <a class="login-brand" href="../index.html">CAIS<span>.</span></a>
+    <a class="login-back" href="../index.html">&larr; Kembali ke Beranda</a>
+  </header>
+
+  <main class="login-wrap">
+    <div class="login-card">
+      <h2>Masuk ke CAIS</h2>
+      <p class="login-sub">Collaborative Academic Information System</p>
+
+      <div id="login-alert" class="login-alert" role="alert"></div>
+
+      <form id="form-login" novalidate>
+        <div class="login-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" placeholder="contoh: admin" autocomplete="username">
+        </div>
+
+        <div class="login-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Masukkan password" autocomplete="current-password">
+        </div>
+
+        <label class="login-show">
+          <input type="checkbox" id="show-password"> Tampilkan password
+        </label>
+
+        <button type="submit" class="login-btn">Masuk</button>
+      </form>
+
+      <p class="login-hint">Akun demo: <strong>admin</strong> / <strong>admin123</strong></p>
+    </div>
+  </main>
+
+  <footer class="login-footer">
+    &copy; 2026 CAIS - UTS Praktikum Collaborative Computing
+  </footer>
+
+  <script src="../js/login.js"></script>
+</body>
+</html>
