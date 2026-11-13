@@ -4,105 +4,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>CAIS - Login</title>
-
-    <!-- CSS Global -->
-    <link rel="stylesheet" href="../css/style.css">
-
-    <!-- CSS Login -->
     <link rel="stylesheet" href="../css/login.css">
 </head>
-
 <body class="login-page">
 
-    <!-- Header -->
-    <header class="login-header">
-        <a class="login-brand" href="../index.html">
-            CAIS<span>.</span>
-        </a>
+    <main class="login-container">
 
-        <a class="login-back" href="../index.html">
-            &larr; Kembali ke Beranda
-        </a>
-    </header>
+        <!-- Panel Login -->
+        <section class="login-left">
 
-    <!-- Konten Login -->
-    <main class="login-wrap">
+            <h1>WELCOME TO CAIS</h1>
 
-        <div class="login-card">
-
-            <h2>Masuk ke CAIS</h2>
-
-            <p class="login-sub">
-                Collaborative Academic Information System
+            <p class="login-description">
+                or use your username and password
             </p>
 
-            <!-- Pesan Login -->
-            <div
-                id="login-alert"
-                class="login-alert"
-                role="alert"
-                aria-live="polite">
-            </div>
+            <div id="login-alert" class="login-alert" role="alert"></div>
 
-            <!-- Form Login -->
             <form id="form-login" novalidate>
 
                 <div class="login-group">
-                    <label for="username">Username</label>
-
                     <input
                         type="text"
                         id="username"
-                        placeholder="Masukkan username"
+                        placeholder="Username"
                         autocomplete="username"
                         required>
                 </div>
 
                 <div class="login-group">
-                    <label for="password">Password</label>
-
                     <input
                         type="password"
                         id="password"
-                        placeholder="Masukkan password"
+                        placeholder="Password"
                         autocomplete="current-password"
                         required>
                 </div>
 
-                <!-- Tampilkan Password -->
-                <label class="login-show">
-                    <input
-                        type="checkbox"
-                        id="show-password">
+                <div class="password-options">
+                    <label>
+                        <input type="checkbox" id="show-password">
+                        Tampilkan password
+                    </label>
+                </div>
 
-                    Tampilkan password
-                </label>
+                <a href="#" class="forgot-password">
+                    Lupa Password?
+                </a>
 
-                <!-- Tombol Login -->
                 <button type="submit" class="login-btn">
-                    Masuk
+                    SIGN IN
                 </button>
 
             </form>
 
-            <!-- Informasi Akun Demo -->
             <p class="login-hint">
-                Akun demo:
-                <strong>admin</strong> / <strong>admin123</strong>
+                Akun demo: admin / admin123
             </p>
 
-        </div>
+        </section>
+
+        <!-- Panel Informasi -->
+        <section class="login-right">
+
+            <div class="right-content">
+
+                <h2>Hello, Friend!</h2>
+
+                <p>
+                    Selamat datang di CAIS.
+                    Collaborative Academic Information System
+                    untuk mendukung kegiatan akademik.
+                </p>
+
+                <a href="../index.html" class="signup-btn">
+                    KEMBALI
+                </a>
+
+            </div>
+
+        </section>
 
     </main>
 
-    <!-- Footer -->
-    <footer class="login-footer">
-        &copy; 2026 CAIS - UTS Praktikum Collaborative Computing
-    </footer>
-
-    <!-- JavaScript -->
     <script src="../js/login.js"></script>
 
 </body>

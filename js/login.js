@@ -1,10 +1,4 @@
 
-/* ==================================================
-   CAIS - LOGIN SYSTEM
-   ================================================== */
-
-// DATA AKUN DEMO
-
 const AKUN_DEMO = [
     {
         username: "admin",
@@ -26,141 +20,79 @@ const AKUN_DEMO = [
     }
 ];
 
-
-// MENAMPILKAN PESAN LOGIN
-
 function loginTampilkanPesan(teks, tipe) {
-
     const box = document.getElementById("login-alert");
-
     box.textContent = teks;
-
     box.className = "login-alert show " + tipe;
-
 }
 
-
-// PROSES LOGIN
-
 function loginProses(event) {
-
     event.preventDefault();
 
-    const username = document
-        .getElementById("username")
-        .value.trim();
-
-    const password = document
-        .getElementById("password")
-        .value;
-
-
-    // VALIDASI INPUT
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value;
 
     if (!username || !password) {
-
         loginTampilkanPesan(
             "Username dan password wajib diisi.",
             "error"
         );
-
         return;
     }
 
-
-    // MEMERIKSA AKUN
-
-    const akun = AKUN_DEMO.find(function (data) {
-
-        return data.username === username &&
-               data.password === password;
-
-    });
-
-
-    // JIKA AKUN TIDAK DITEMUKAN
+    const akun = AKUN_DEMO.find(
+        a => a.username === username &&
+             a.password === password
+    );
 
     if (!akun) {
-
         loginTampilkanPesan(
             "Username atau password salah.",
             "error"
         );
-
         return;
     }
 
-
-    // MENYIMPAN DATA PENGGUNA
-
     try {
-
         localStorage.setItem(
             "cais_user",
-
             JSON.stringify({
                 username: akun.username,
                 nama: akun.nama,
                 role: akun.role
             })
         );
-
     } catch (error) {
-
         loginTampilkanPesan(
-            "Penyimpanan data pengguna gagal.",
+            "Penyimpanan browser tidak tersedia.",
             "error"
         );
-
         return;
     }
-
-
-    // LOGIN BERHASIL
 
     loginTampilkanPesan(
         "Login berhasil! Mengalihkan ke dashboard...",
         "ok"
     );
 
-
-    // MENGARAHKAN KE DASHBOARD
-
-    setTimeout(function () {
-
+    setTimeout(() => {
         window.location.href = "dashboard.html";
-
-    }, 1000);
-
+    }, 700);
 }
 
-
-// FITUR TAMPILKAN PASSWORD
-
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
 
     const form = document.getElementById("form-login");
 
     if (!form) return;
 
-
-    // EVENT FORM LOGIN
-
     form.addEventListener("submit", loginProses);
 
+    document.getElementById("show-password")
+        .addEventListener("change", (event) => {
 
-    // EVENT TAMPILKAN PASSWORD
+            document.getElementById("password").type =
+                event.target.checked ? "text" : "password";
 
-    const showPassword = document.getElementById("show-password");
-
-    const passwordInput = document.getElementById("password");
-
-    showPassword.addEventListener("change", function () {
-
-        passwordInput.type = this.checked
-            ? "text"
-            : "password";
-
-    });
-
+        });
 });
