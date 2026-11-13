@@ -1,0 +1,106 @@
+
+/* ===== HALAMAN DATA MAHASISWA ===== */
+
+.halaman-mahasiswa {
+    margin: 0;
+    padding: 40px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f3f6fc;
+    color: #26334d;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.halaman-mahasiswa h1 {
+    color: #243b64;
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.halaman-mahasiswa p {
+    color: #7b879b;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+.halaman-mahasiswa h2 {
+    color: #243b64;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+/* Container tabel */
+
+.halaman-mahasiswa .table-container {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(35, 59, 100, 0.08);
+    overflow-x: auto;
+}
+
+/* Tabel */
+
+.halaman-mahasiswa table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+
+/* Header tabel */
+
+.halaman-mahasiswa thead {
+    background-color: #304d7a;
+    color: #ffffff;
+}
+
+.halaman-mahasiswa th {
+    padding: 16px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Isi tabel */
+
+.halaman-mahasiswa td {
+    padding: 15px 16px;
+    border-bottom: 1px solid #edf0f5;
+    font-size: 14px;
+    color: #45536b;
+}
+
+/* Warna selang-seling */
+
+.halaman-mahasiswa tbody tr:nth-child(even) {
+    background-color: #f7f9fd;
+}
+
+/* Efek saat kursor diarahkan */
+
+.halaman-mahasiswa tbody tr:hover {
+    background-color: #eaf1fc;
+    transition: 0.2s;
+}
+
+/* Baris terakhir */
+
+.halaman-mahasiswa tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Tampilan HP */
+
+@media (max-width: 768px) {
+    .halaman-mahasiswa {
+        padding: 20px 12px;
+    }
+
+    .halaman-mahasiswa h1 {
+        font-size: 26px;
+    }
+
+    .halaman-mahasiswa .table-container {
+        padding: 15px;
+    }
+}
