@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CAIS - Login</title>
+
+    <!-- CSS Global -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- CSS Login -->
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+
+<body class="login-page">
+
+    <!-- Header -->
+    <header class="login-header">
+        <a class="login-brand" href="../index.html">
+            CAIS<span>.</span>
+        </a>
+
+        <a class="login-back" href="../index.html">
+            &larr; Kembali ke Beranda
+        </a>
+    </header>
+
+    <!-- Konten Login -->
+    <main class="login-wrap">
+
+        <div class="login-card">
+
+            <h2>Masuk ke CAIS</h2>
+
+            <p class="login-sub">
+                Collaborative Academic Information System
+            </p>
+
+            <!-- Pesan Login -->
+            <div
+                id="login-alert"
+                class="login-alert"
+                role="alert"
+                aria-live="polite">
+            </div>
+
+            <!-- Form Login -->
+            <form id="form-login" novalidate>
+
+                <div class="login-group">
+                    <label for="username">Username</label>
+
+                    <input
+                        type="text"
+                        id="username"
+                        placeholder="Masukkan username"
+                        autocomplete="username"
+                        required>
+                </div>
+
+                <div class="login-group">
+                    <label for="password">Password</label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Masukkan password"
+                        autocomplete="current-password"
+                        required>
+                </div>
+
+                <!-- Tampilkan Password -->
+                <label class="login-show">
+                    <input
+                        type="checkbox"
+                        id="show-password">
+
+                    Tampilkan password
+                </label>
+
+                <!-- Tombol Login -->
+                <button type="submit" class="login-btn">
+                    Masuk
+                </button>
+
+            </form>
+
+            <!-- Informasi Akun Demo -->
+            <p class="login-hint">
+                Akun demo:
+                <strong>admin</strong> / <strong>admin123</strong>
+            </p>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="login-footer">
+        &copy; 2026 CAIS - UTS Praktikum Collaborative Computing
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/login.js"></script>
+
+</body>
+</html>

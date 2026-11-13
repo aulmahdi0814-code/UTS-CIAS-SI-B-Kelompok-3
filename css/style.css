@@ -1,0 +1,229 @@
+/* ==========================================================
+   CAIS - Collaborative Academic Information System
+   Stylesheet global (dipakai semua halaman)
+   ========================================================== */
+
+:root {
+  --primary: #1e3a8a;
+  --primary-light: #3b5bdb;
+  --accent: #f59e0b;
+  --bg: #f4f6fb;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --success: #16a34a;
+  --danger: #dc2626;
+  --radius: 12px;
+  --shadow: 0 4px 14px rgba(30, 58, 138, 0.08);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a { color: var(--primary-light); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---------- Navbar ---------- */
+.navbar {
+  background: var(--primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  height: 64px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.navbar .brand { font-weight: 700; font-size: 1.2rem; color: #fff; }
+.navbar .brand span { color: var(--accent); }
+.navbar ul { list-style: none; display: flex; gap: 6px; align-items: center; }
+.navbar ul a {
+  color: #dbe4ff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  display: block;
+}
+.navbar ul a:hover,
+.navbar ul a.active { background: rgba(255, 255, 255, 0.14); color: #fff; text-decoration: none; }
+.nav-user { font-size: 0.9rem; color: #dbe4ff; margin-right: 8px; }
+
+/* ---------- Layout ---------- */
+main { flex: 1; }
+.container { max-width: 1080px; margin: 0 auto; padding: 32px 20px; }
+.footer {
+  text-align: center;
+  padding: 18px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--border);
+  background: var(--card);
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  background: var(--primary);
+  color: #fff;
+  transition: background 0.2s;
+}
+.btn:hover { background: var(--primary-light); text-decoration: none; }
+.btn-accent { background: var(--accent); color: #1f2937; }
+.btn-accent:hover { background: #fbbf24; }
+.btn-outline { background: transparent; border: 2px solid #fff; color: #fff; }
+.btn-outline:hover { background: rgba(255, 255, 255, 0.15); }
+.btn-danger { background: var(--danger); }
+.btn-danger:hover { background: #ef4444; }
+.btn-sm { padding: 6px 12px; font-size: 0.85rem; }
+
+/* ---------- Hero (beranda) ---------- */
+.hero {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+}
+.hero h1 { font-size: 2.4rem; margin-bottom: 12px; }
+.hero p { max-width: 640px; margin: 0 auto 28px; color: #dbe4ff; font-size: 1.05rem; }
+.hero .actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+  margin-top: 8px;
+}
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+.card h3 { margin-bottom: 8px; color: var(--primary); }
+.card .icon { font-size: 2rem; margin-bottom: 8px; }
+.section-title { font-size: 1.5rem; margin-bottom: 18px; color: var(--primary); }
+
+/* ---------- Login ---------- */
+.login-wrap { display: flex; justify-content: center; padding: 56px 16px; }
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  background: var(--card);
+  padding: 32px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+.login-card h2 { color: var(--primary); margin-bottom: 4px; }
+.login-card .sub { color: var(--muted); margin-bottom: 20px; font-size: 0.92rem; }
+.form-group { margin-bottom: 16px; }
+.form-group label { display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.9rem; }
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+.form-group input:focus,
+.form-group select:focus {
+  outline: 2px solid var(--primary-light);
+  border-color: transparent;
+}
+.alert { padding: 10px 14px; border-radius: 8px; margin-bottom: 14px; font-size: 0.9rem; display: none; }
+.alert.show { display: block; }
+.alert-error { background: #fee2e2; color: #991b1b; }
+.alert-success { background: #dcfce7; color: #166534; }
+.hint { font-size: 0.82rem; color: var(--muted); margin-top: 14px; text-align: center; }
+.login-card .btn { width: 100%; }
+
+/* ---------- Dashboard ---------- */
+.page-head { margin-bottom: 24px; }
+.page-head h1 { color: var(--primary); }
+.page-head p { color: var(--muted); }
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 18px;
+  margin-bottom: 28px;
+}
+.stat { display: flex; align-items: center; gap: 14px; }
+.stat .num { font-size: 1.9rem; font-weight: 700; color: var(--primary); line-height: 1; }
+.stat .label { color: var(--muted); font-size: 0.88rem; }
+.stat .icon { font-size: 2rem; }
+
+.grid-2 { display: grid; grid-template-columns: 1.4fr 1fr; gap: 20px; }
+@media (max-width: 800px) { .grid-2 { grid-template-columns: 1fr; } }
+
+.bar-row { margin-bottom: 14px; }
+.bar-row .bar-label { display: flex; justify-content: space-between; font-size: 0.88rem; margin-bottom: 4px; }
+.bar { height: 10px; background: var(--border); border-radius: 99px; overflow: hidden; }
+.bar > div { height: 100%; background: linear-gradient(90deg, var(--primary-light), var(--accent)); border-radius: 99px; }
+
+.agenda { list-style: none; }
+.agenda li { padding: 10px 0; border-bottom: 1px solid var(--border); display: flex; gap: 12px; }
+.agenda li:last-child { border-bottom: none; }
+.agenda .date {
+  background: var(--primary);
+  color: #fff;
+  border-radius: 8px;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  text-align: center;
+  min-width: 56px;
+  height: fit-content;
+}
+.agenda .info strong { display: block; font-size: 0.93rem; }
+.agenda .info span { font-size: 0.82rem; color: var(--muted); }
+
+/* ---------- Tabel mahasiswa ---------- */
+.toolbar { display: flex; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+.toolbar input { flex: 1; min-width: 200px; padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; font-size: 0.95rem; }
+.table-wrap { overflow-x: auto; background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid var(--border); }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 12px 16px; text-align: left; font-size: 0.92rem; }
+thead th { background: var(--primary); color: #fff; white-space: nowrap; }
+tbody tr { border-bottom: 1px solid var(--border); }
+tbody tr:hover { background: #f1f5ff; }
+.badge { padding: 3px 10px; border-radius: 99px; font-size: 0.78rem; font-weight: 600; }
+.badge-aktif { background: #dcfce7; color: #166534; }
+.badge-cuti { background: #fef3c7; color: #92400e; }
+.empty { text-align: center; color: var(--muted); padding: 28px; display: none; }
+
+/* ---------- Modal ---------- */
+.modal-bg {
+  position: fixed; inset: 0; background: rgba(0, 0, 0, 0.45);
+  display: none; align-items: center; justify-content: center; z-index: 50; padding: 16px;
+}
+.modal-bg.show { display: flex; }
+.modal { background: var(--card); border-radius: var(--radius); padding: 28px; width: 100%; max-width: 440px; }
+.modal h3 { color: var(--primary); margin-bottom: 16px; }
+.modal .row { display: flex; gap: 10px; justify-content: flex-end; margin-top: 18px; }
+.btn-light { background: var(--border); color: var(--text); }
+.btn-light:hover { background: #d1d5db; }
+
+@media (max-width: 640px) {
+  .navbar { flex-direction: column; height: auto; padding: 12px; gap: 8px; }
+  .hero h1 { font-size: 1.8rem; }
+}
